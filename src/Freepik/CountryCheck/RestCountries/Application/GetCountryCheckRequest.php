@@ -6,6 +6,7 @@ namespace App\Freepik\CountryCheck\RestCountries\Application;
 
 use App\Freepik\CountryCheck\RestCountries\Domain\ExecuteAlphaRequest;
 use App\Freepik\CountryCheck\RestCountries\Domain\HttpRepositoryInterface;
+use App\Freepik\CountryCheck\Shared\Domain\AlphaResponse;
 
 class GetCountryCheckRequest
 {
@@ -13,7 +14,7 @@ class GetCountryCheckRequest
     {
     }
 
-    public function execute(string $countryCode)
+    public function execute(string $countryCode): AlphaResponse
     {
         $request = new ExecuteAlphaRequest($countryCode);
 
