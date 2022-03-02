@@ -1,0 +1,11 @@
+version: '3.7'
+#Only Ports
+services:
+  slim-nginx:
+    ports:
+      - "8080:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  slim-db:
+    ports:
+      - "3306:3306"

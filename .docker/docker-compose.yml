@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  slim-nginx:
+    image: nginx:latest
+    depends_on:
+      - slim-php
+    volumes:
+      - ./logs/nginx/:/var/log/nginx
+      - ../:/var/www/html
+      - ./nginx/slim.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - freepik-net
+
+  slim-php:
+    build: php
+    volumes:
+      - ../:/var/www/html
+    networks:
+      - freepik-net
+
+  slim-db:
+    image: mysql:8.0
+    networks:
+      - freepik-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=slim_db
+
+volumes:
+  database: {}
+
+networks:
+  freepik-net:
+    driver: bridge
