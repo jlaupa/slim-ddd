@@ -74,3 +74,59 @@ make help
 <br>
 If you have come this far, thank you very much for your time.
 You can ask me questions to my email jairo@group-celit.com
+
+
+Bonus:
+
+Postman Collection
+```
+{
+	"info": {
+		"_postman_id": "3158b96e-11bb-4945-9219-3acc500563ac",
+		"name": "Freepik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CheckCountry",
+			"item": [
+				{
+					"name": "get country check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
+```
